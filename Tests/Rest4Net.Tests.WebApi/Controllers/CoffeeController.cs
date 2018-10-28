@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
 using Rest4Net.Attributes;
 using Rest4Net.Test.Common.Model;
 using Rest4Net.Test.Common.Repository;
@@ -8,7 +7,6 @@ using Rest4Net.Test.Common.Repository;
 
 namespace Rest4Net.Tests.WebApi.Controllers
 {
-    [Route("api/[controller]")]
     public class CoffeeController : RestController
     {
         private readonly IRepository<Coffee> repository;

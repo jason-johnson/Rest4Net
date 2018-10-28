@@ -9,14 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Rest4Net\Rest4Net.csproj" />
     <ProjectReference Include="..\Rest4Net.Tests.Common\Rest4Net.Tests.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Controllers\ValuesController.cs" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
   </ItemGroup>
 </Project>
