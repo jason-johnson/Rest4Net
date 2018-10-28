@@ -14,12 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="Model\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rest4Net\Rest4Net.csproj" />
+    <ProjectReference Include="..\Rest4Net.Tests.Common.csproj" />
+    <ProjectReference Include="..\..\Rest4Net\Rest4Net.csproj" />
   </ItemGroup>
 </Project>

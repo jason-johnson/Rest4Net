@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Rest4Net.Test.Repository
+namespace Rest4Net.Test.Common.Repository
 {
     public interface IRepository<T, TId>
     {

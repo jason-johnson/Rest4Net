@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Rest4Net.Data;
-using Rest4Net.Test.Model;
+using Rest4Net.Test.Common.Model;
 
-namespace Rest4Net.Test.Contract
+namespace Rest4Net.Test.Common.Contract
 {
     public class HomeContract : RestContract
     {

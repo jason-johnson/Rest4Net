@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Rest4Net.Test.Repository
+namespace Rest4Net.Test.Common.Repository
 {
-    public class TestRepository<T> : IRepository<T, int>
+    public class TestRepository<T> : IRepository<T>
     {
         protected List<T> Collection { get; }
 

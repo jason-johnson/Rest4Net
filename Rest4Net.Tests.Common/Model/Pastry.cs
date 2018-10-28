@@ -1,8 +1,8 @@
-﻿namespace Rest4Net.Test.Model
+﻿namespace Rest4Net.Test.Common.Model
 {
-    public class Coffee
+    public class Pastry
     {
-        public Coffee(string name, int count)
+        public Pastry(string name, int count)
         {
             Name = name;
             Count = count;
