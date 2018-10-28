@@ -17,7 +17,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
         }
 
         [RestServiceMethod]
-        public IEnumerable<Coffee> GetAllCoffee()
+        public IEnumerable<Coffee> GetAll()
         {
             return repository.GetAll();
         }
