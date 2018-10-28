@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rest4Net.Tests.Common.csproj" />
     <ProjectReference Include="..\..\Rest4Net\Rest4Net.csproj" />
+    <ProjectReference Include="..\Rest4Net.Tests.Common\Rest4Net.Tests.Common.csproj" />
   </ItemGroup>
 </Project>

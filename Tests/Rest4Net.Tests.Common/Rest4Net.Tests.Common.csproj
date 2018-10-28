@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Rest4Net.Tests.WebApi\appsettings.Development.json" />
+    <None Remove="Rest4Net.Tests.WebApi\appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Rest4Net.Tests.Integration\CoffeeServiceTests.cs" />
+    <Compile Remove="Controller\CoffeShop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Rest4Net\Rest4Net.csproj" />
+  </ItemGroup>
+</Project>

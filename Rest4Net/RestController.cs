@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Rest4Net
 {
-    public class RestController : Controller
+    [ApiController]
+    public class RestController : ControllerBase
     {
         public RestController()
         {
