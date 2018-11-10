@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Rest4NetCore.Attributes
 {
-	public class RestServiceMethodAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    public class RestServiceMethodAttribute : Attribute
     {
         public RestServiceMethodAttribute()
         {

@@ -15,7 +15,6 @@ namespace Rest4Net.Tests.Integration
 
         [Theory]
         [InlineData("/Coffee")]
-        [InlineData("/blog")]
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
             // Arrange

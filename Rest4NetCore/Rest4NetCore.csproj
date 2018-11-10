@@ -9,7 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Data\" />
     <Folder Include="Builder\" />
   </ItemGroup>
 </Project>

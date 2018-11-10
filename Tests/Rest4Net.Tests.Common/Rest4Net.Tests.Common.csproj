@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Remove="Rest4Net.Tests.Integration\CoffeeServiceTests.cs" />
     <Compile Remove="Controller\CoffeShop.cs" />
+    <Compile Remove="Contracts\CoffeeContract.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Rest4NetCore\Rest4NetCore.csproj" />
