@@ -13,6 +13,6 @@
     <Compile Remove="Controller\CoffeShop.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Rest4Net\Rest4Net.csproj" />
+    <ProjectReference Include="..\..\Rest4NetCore\Rest4NetCore.csproj" />
   </ItemGroup>
 </Project>

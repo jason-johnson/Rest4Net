@@ -1,4 +1,4 @@
-﻿using Rest4Net.Data;
+﻿using Rest4NetCore.Data;
 
 namespace Rest4Net.Test.Common.Contracts
 {

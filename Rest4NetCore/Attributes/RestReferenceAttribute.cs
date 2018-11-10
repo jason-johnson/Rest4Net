@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Rest4Net.Attributes
+namespace Rest4NetCore.Attributes
 {
     public class RestReferenceAttribute : Attribute
     {

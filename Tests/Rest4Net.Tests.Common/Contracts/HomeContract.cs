@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Rest4Net.Data;
 using Rest4Net.Test.Common.Model;
+using Rest4NetCore.Data;
 
 namespace Rest4Net.Test.Common.Contract
 {

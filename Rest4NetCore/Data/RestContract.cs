@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Rest4Net.Data
+namespace Rest4NetCore.Data
 {
     public class RestContract
     {
