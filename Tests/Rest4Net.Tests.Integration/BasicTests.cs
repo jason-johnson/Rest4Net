@@ -15,6 +15,7 @@ namespace Rest4Net.Tests.Integration
 
         [Theory]
         [InlineData("/Coffee")]
+        [InlineData("/blog")]
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
             // Arrange
@@ -25,7 +26,7 @@ namespace Rest4Net.Tests.Integration
 
             // Assert
             response.EnsureSuccessStatusCode(); // Status Code 200-299
-            Assert.Equal("text/html; charset=utf-8",
+            Assert.Equal("application/json; charset=utf-8",
                 response.Content.Headers.ContentType.ToString());
         }
     }

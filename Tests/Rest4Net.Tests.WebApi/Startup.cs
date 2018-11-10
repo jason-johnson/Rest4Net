@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Rest4Net.Test.Common.Repository;
+using Rest4NetCore.Builder;
 
 namespace Rest4Net.Tests.WebApi
 {
@@ -26,6 +28,7 @@ namespace Rest4Net.Tests.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped(typeof(IRepository<>), typeof(TestRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +44,7 @@ namespace Rest4Net.Tests.WebApi
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRest();
         }
     }
 }
