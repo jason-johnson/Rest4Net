@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Rest4Net.Test.Common.Model;
 using Rest4Net.Test.Common.Repository;
 using Rest4NetCore;
 using Rest4NetCore.Attributes;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Rest4Net.Tests.WebApi.Controllers
 {
@@ -21,6 +20,12 @@ namespace Rest4Net.Tests.WebApi.Controllers
         public IEnumerable<Coffee> GetAll()
         {
             return repository.GetAll();
+        }
+
+        [RestServiceMethod]
+        public Coffee GetInfo(string name)
+        {
+            return repository.GetAll(c => c.Name == name).Single();
         }
     }
 }

@@ -2,13 +2,9 @@
 {
     public class Coffee
     {
-        public Coffee(string name, int count)
-        {
-            Name = name;
-            Count = count;
-        }
-
-        public string Name { get; }
-        public int Count { get; }
+        public string Name { get; set; }
+        public string Descrip { get; set; }
+        public int Count { get; set; }
+        public double Price { get; set; }
     }
 }
