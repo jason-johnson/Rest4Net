@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Rest4Net.Test.Common.Model;
 using Rest4Net.Test.Common.Repository;
 using Rest4Net.Tests.WebApi.Contracts;
@@ -34,7 +33,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
         }
 
         [RestServiceMethod]
-        public OrderResultContract PlaceOrder(OrderContract order)
+        public OrderResultContract PlaceOrder(OrderContract order)      // TODO: If the return type and/or parameter are already contracts nothing more is needed
         {
             var result = new OrderResultContract
             {
