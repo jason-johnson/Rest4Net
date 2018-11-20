@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
@@ -23,8 +24,12 @@ namespace Rest4Net.Tests.Integration
             // Act
             var response = await client.GetAsync(url);
 
-            // Assert
-            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            if(!response.IsSuccessStatusCode)
+            {
+                var error = response.Content.ReadAsStringAsync();
+                throw new Exception($"error with url '{url}': '{error}'");
+            }
+
             Assert.Equal("application/json; charset=utf-8",
                 response.Content.Headers.ContentType.ToString());
         }
