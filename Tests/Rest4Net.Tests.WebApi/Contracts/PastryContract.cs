@@ -4,8 +4,8 @@ using Rest4NetCore.Attributes;
 
 namespace Rest4Net.Tests.WebApi.Contracts
 {
-    [RestContract(typeof(Coffee))]
-    public class CoffeeContract : RestContractBase<Coffee>
+    [RestContract(typeof(Pastry))]
+    public class PastryContract : RestContractBase<Pastry>
     {
     }
 }

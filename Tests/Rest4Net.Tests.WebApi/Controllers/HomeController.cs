@@ -2,6 +2,7 @@
 using System.Linq;
 using Rest4Net.Test.Common.Model;
 using Rest4Net.Test.Common.Repository;
+using Rest4Net.Tests.WebApi.Contracts;
 using Rest4Net.Tests.WebApi.Model;
 using Rest4NetCore;
 using Rest4NetCore.Attributes;
@@ -24,19 +25,20 @@ namespace Rest4Net.Tests.WebApi.Controllers
         {
             var result = new Home
             {
+                Greeting = "Hello and welcome to the coffee shop!",
                 Coffees = coffeeRepository.GetAll(c => c.Count > 0).Select(c => c.Name),
-                Pastries = pastryRepository.GetAll(p => p.Count > 0).Select(p => p.Name)
+                Pastries = pastryRepository.GetAll(p => p.Count > 0)
             };
 
             return result;
         }
 
         [RestServiceMethod]
-        public OrderResult PlaceOrder(Order order)
+        public OrderResultContract PlaceOrder(OrderContract order)
         {
-            var result = new OrderResult
+            var result = new OrderResultContract
             {
-                Order = new Order()
+                Order = new OrderContract()
             };
 
             foreach (var entry in order.Coffees)
