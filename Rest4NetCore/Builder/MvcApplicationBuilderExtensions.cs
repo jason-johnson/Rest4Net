@@ -16,7 +16,7 @@ namespace Rest4NetCore.Builder
                 throw new ArgumentNullException(nameof(app));
             }
 
-            var types = LoadAllRestTypes();
+            var types = LoadAllDefinedTypes();
 
             var ss = CompileTypes(types);
 
@@ -29,7 +29,7 @@ namespace Rest4NetCore.Builder
             });
         }
 
-        private static IEnumerable<TypeInfo> LoadAllRestTypes()
+        private static IEnumerable<TypeInfo> LoadAllDefinedTypes()
         {
             var assembly = Assembly.GetEntryAssembly();
             var refAssemblies = assembly.GetReferencedAssemblies().Select(Assembly.Load);

@@ -27,7 +27,6 @@ namespace Rest4Net.Tests.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Middleware that run before routing. Usually the following appear here:
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
