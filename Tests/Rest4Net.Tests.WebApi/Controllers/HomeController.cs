@@ -48,7 +48,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
 
                 var quantity = entry.Value > coffee.Count ? coffee.Count : entry.Value;
 
-                coffee.Count = coffee.Count - quantity;
+                coffee.Count -= quantity;
 
                 coffeeRepository.Update(coffee);
 
@@ -65,7 +65,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
 
                 var quantity = entry.Value > pastry.Count ? pastry.Count : entry.Value;
 
-                pastry.Count = pastry.Count - quantity;
+                pastry.Count -= quantity;
 
                 pastryRepository.Update(pastry);
 
