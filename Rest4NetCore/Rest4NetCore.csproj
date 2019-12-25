@@ -13,5 +13,6 @@
     <Folder Include="Builder\" />
     <Folder Include="Filter\" />
     <Folder Include="Utilities\" />
+    <Folder Include="ApplicationBuilder\" />
   </ItemGroup>
 </Project>

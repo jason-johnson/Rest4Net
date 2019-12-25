@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Rest4Net.Test.Common.Repository;
-using Rest4NetCore.Builder;
+using Rest4NetCore.ApplicationBuilder;
 
 namespace Rest4Net.Tests.WebApi
 {

@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Rest4NetCore.Attributes;
 
-namespace Rest4NetCore.Builder
+namespace Rest4NetCore.ApplicationBuilder
 {
     public static class MvcApplicationBuilderExtensions
     {
