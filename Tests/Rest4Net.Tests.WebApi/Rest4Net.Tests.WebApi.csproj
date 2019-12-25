@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +13,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Rest4Net.Tests.Common\Rest4Net.Tests.Common.csproj" />
     <ProjectReference Include="..\..\Rest4NetCore\Rest4NetCore.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
   </ItemGroup>
 </Project>

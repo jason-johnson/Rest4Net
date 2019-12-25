@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
@@ -22,6 +23,12 @@ namespace Rest4Net.Tests.Integration
 
             // Act
             var response = await client.GetAsync("/Coffee");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = response.Content.ReadAsStringAsync();
+                throw new Exception($"error getting /Coffee: '{response.ReasonPhrase} - {(string.IsNullOrEmpty(error.Result) ? "none" : error.Result)}'");
+            }
 
             //var service = new CoffeeShop(new TestRepository<Coffee>(new List<Coffee> { new Coffee("latte", 3) }));
             //var coffee = service.OrderCoffee("latte");

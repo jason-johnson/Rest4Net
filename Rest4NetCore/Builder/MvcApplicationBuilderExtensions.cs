@@ -20,10 +20,12 @@ namespace Rest4NetCore.Builder
 
             var ss = CompileTypes(types);
 
-            return app.UseMvc(routes => 
+            return app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute("coffee", "Coffee/",
-                                defaults: new { controller = "Coffee", action = "GetAll" });
+                // Mapping of endpoints goes here:
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute("coffee", "Coffee/",
+                    defaults: new { controller = "Coffee", action = "GetAll" });
             });
         }
 

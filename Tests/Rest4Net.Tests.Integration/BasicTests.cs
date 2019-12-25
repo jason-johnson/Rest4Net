@@ -27,7 +27,7 @@ namespace Rest4Net.Tests.Integration
             if(!response.IsSuccessStatusCode)
             {
                 var error = response.Content.ReadAsStringAsync();
-                throw new Exception($"error with url '{url}': '{error}'");
+                throw new Exception($"error with url '{url}': '{response.ReasonPhrase} - {(string.IsNullOrEmpty(error.Result) ? "none" : error.Result)}'");
             }
 
             Assert.Equal("application/json; charset=utf-8",
