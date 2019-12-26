@@ -25,4 +25,55 @@ This library aims to integrate in the expected way with the existing ASP.NET fra
 attributes.  You will note that there is no way to specify URLs in this library.  This is on purpose.  URLs are an
 implementation detail that the Rest4Net library will manage.
 
-TBD
+REST controllers must be derived from `RestController`
+
+```
+public class HomeController : RestController
+``
+
+Somewhere in the application there must be a `RestEntrypointAttribute`
+
+```
+[RestEntrypoint]
+public Home GetInitialResource()
+{
+  var result = new Home
+  {
+    Greeting = "Hello and welcome to the coffee shop!",
+    Coffees = coffeeRepository.GetAll(c => c.Count > 0).Select(c => c.Name),
+    Pastries = pastryRepository.GetAll(p => p.Count > 0)
+  };
+
+  return result;
+}
+```
+
+Other methods must be deocrated with `RestServiceMethodAttribute`
+
+```
+[RestServiceMethod]
+public IEnumerable<Coffee> GetAll()
+{
+  return repository.GetAll();
+}
+```
+
+Methods return objects in the model but Rest4Net will automatically replace these with contracts which carry
+`RestContractAttribute`
+
+```
+[RestContract(typeof(Coffee))]
+public class CoffeeContract : RestContractBase<Coffee>
+{
+}
+
+[RestContract(typeof(Home), Version = "1.2")]
+public class HomeContract : OldHomeContract
+{
+  public string Greeting
+  {
+    get => Model.Greeting;
+    set => Model.Greeting = value;
+  }
+}
+```
