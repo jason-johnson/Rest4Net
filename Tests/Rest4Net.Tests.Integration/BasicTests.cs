@@ -5,11 +5,11 @@ using Xunit;
 
 namespace Rest4Net.Tests.Integration
 {
-    public class BasicTests : IClassFixture<WebApplicationFactory<WebApi.Startup>>
+    public class BasicTests : IClassFixture<CustomWebApplicationFactory<WebApi.Startup>>
     {
         private readonly WebApplicationFactory<WebApi.Startup> _factory;
 
-        public BasicTests(WebApplicationFactory<WebApi.Startup> factory)
+        public BasicTests(CustomWebApplicationFactory<WebApi.Startup> factory)
         {
             _factory = factory;
         }

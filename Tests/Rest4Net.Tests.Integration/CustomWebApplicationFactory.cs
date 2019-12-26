@@ -4,7 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Rest4Net.Tests.Integration
 {
-    public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<WebApi.Startup>
+    public class CustomWebApplicationFactory<TStartup>
+        : WebApplicationFactory<TStartup> where TStartup : class
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
