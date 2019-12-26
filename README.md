@@ -29,7 +29,7 @@ REST controllers must be derived from `RestController`
 
 ```
 public class HomeController : RestController
-``
+```
 
 Somewhere in the application there must be a `RestEntrypointAttribute`
 
