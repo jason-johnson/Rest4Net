@@ -6,11 +6,11 @@ using Xunit;
 
 namespace Rest4Net.Tests.Integration
 {
-    public class CoffeeServiceTests : IClassFixture<WebApplicationFactory<WebApi.Startup>>
+    public class CoffeeServiceTests : IClassFixture<CustomWebApplicationFactory<WebApi.Startup>>
     {
         private readonly WebApplicationFactory<WebApi.Startup> _factory;
 
-        public CoffeeServiceTests(WebApplicationFactory<WebApi.Startup> factory)
+        public CoffeeServiceTests(CustomWebApplicationFactory<WebApi.Startup> factory)
         {
             _factory = factory;
         }

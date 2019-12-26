@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Rest4Net.Tests.Integration
 {
@@ -11,9 +13,13 @@ namespace Rest4Net.Tests.Integration
         {
             builder.ConfigureServices(services =>
             {
-                // Create a new service provider.
-                var serviceProvider = new ServiceCollection()
-                    .BuildServiceProvider();
+                if (services == null)
+                {
+                    throw new ArgumentNullException(nameof(services));
+                }
+
+                services.TryAddEnumerable(ServiceDescriptor.Transient<IStartupFilter, StartupFilter>());
+                services.BuildServiceProvider();
             });
         }
     }

@@ -9,6 +9,8 @@ namespace Rest4NetCore.ApplicationBuilder
 {
     public static class MvcApplicationBuilderExtensions
     {
+        private const string TEST_ASSEMBLY = "TEST_ASSEMBLY";
+
         public static IApplicationBuilder UseRest(this IApplicationBuilder app)
         {
             if (app == null)
@@ -16,7 +18,9 @@ namespace Rest4NetCore.ApplicationBuilder
                 throw new ArgumentNullException(nameof(app));
             }
 
-            var types = LoadAllDefinedTypes();
+            var assembly = app.Properties.ContainsKey(TEST_ASSEMBLY) ? app.Properties[TEST_ASSEMBLY] as Assembly : Assembly.GetEntryAssembly();
+
+            var types = LoadAllDefinedTypes(assembly);
 
             var builder = new RestBuilder(types);
 
@@ -28,9 +32,8 @@ namespace Rest4NetCore.ApplicationBuilder
             });
         }
 
-        private static IEnumerable<Type> LoadAllDefinedTypes()
+        private static IEnumerable<Type> LoadAllDefinedTypes(Assembly assembly)
         {
-            var assembly = Assembly.GetEntryAssembly();
             var refAssemblies = assembly.GetReferencedAssemblies().Select(Assembly.Load);
 
             return refAssemblies
