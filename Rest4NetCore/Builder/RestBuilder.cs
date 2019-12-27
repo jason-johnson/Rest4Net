@@ -13,7 +13,7 @@ namespace Rest4NetCore.Builder
 
         private bool entryPointSeen;
         private List<Type> restContracts;
-        private List<Type> restModels;
+        private Dictionary<Type, Dictionary<string, Type>> restModels;
         private List<Type> restControllers;
 
         public RestBuilder(IEnumerable<Type> types)
@@ -42,20 +42,32 @@ namespace Rest4NetCore.Builder
         {
             entryPointSeen = false;
             restContracts = new List<Type>();
-            restModels = new List<Type>();
+            restModels = new Dictionary<Type, Dictionary<string, Type>>();
             restControllers = new List<Type>();
 
             foreach (var contract in contracts)
             {
-                var contractInfo = contract.GetCustomAttribute(typeof(RestContractAttribute), true) as RestContractAttribute;
                 restContracts.Add(contract);
-                restModels.Add(contractInfo.ModelClass);
+
+                AddModel(contract);
             }
 
-            foreach(var controller in this.controllers)
+            foreach(var controller in controllers)
             {
 
             }
+        }
+
+        private void AddModel(Type contract)
+        {
+            var contractInfo = contract.GetCustomAttribute(typeof(RestContractAttribute), true) as RestContractAttribute;
+
+            if(!restModels.ContainsKey(contractInfo.ModelClass))
+            {
+                restModels.Add(contractInfo.ModelClass, new Dictionary<string, Type>());
+            }
+
+            restModels[contractInfo.ModelClass][contractInfo.Version] = contract;
         }
 
         private static bool IsType(Type targ, Type t)
