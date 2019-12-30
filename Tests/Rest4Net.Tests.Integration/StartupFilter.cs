@@ -11,7 +11,7 @@ namespace Rest4Net.Tests.Integration
         {
             return builder =>
             {
-                builder.Properties.Add("TEST_ASSEMBLY", Assembly.GetExecutingAssembly());
+                builder.Properties.Add("ENTRY_POINT_ASSEMBLY", Assembly.GetExecutingAssembly());
                 next(builder);
             };
         }

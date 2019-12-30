@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Builder\" />
     <Folder Include="Utilities\" />
     <Folder Include="Mvc\" />
     <Folder Include="Controller\" />
