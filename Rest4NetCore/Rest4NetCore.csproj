@@ -11,8 +11,8 @@
   <ItemGroup>
     <Folder Include="Attributes\" />
     <Folder Include="Builder\" />
-    <Folder Include="Filter\" />
     <Folder Include="Utilities\" />
-    <Folder Include="ApplicationBuilder\" />
+    <Folder Include="Mvc\" />
+    <Folder Include="Controller\" />
   </ItemGroup>
 </Project>

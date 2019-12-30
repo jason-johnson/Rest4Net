@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Rest4NetCore.Builder;
 
-namespace Rest4NetCore.ApplicationBuilder
+namespace Rest4NetCore.Mvc
 {
     public static class MvcApplicationBuilderExtensions
     {

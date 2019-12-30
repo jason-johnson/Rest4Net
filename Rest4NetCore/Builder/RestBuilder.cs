@@ -35,8 +35,6 @@ namespace Rest4NetCore.Builder
         public void MapRestControllers(IEndpointRouteBuilder endpoints)
         {
             Build(endpoints);
-            endpoints.MapControllerRoute("coffee", "Coffee/",
-                defaults: new { controller = "Coffee", action = "GetAll" });
         }
 
         private void Build(IEndpointRouteBuilder endpoints)
@@ -65,11 +63,11 @@ namespace Rest4NetCore.Builder
                         }
 
                         entryPoint = name;
-                        endpoints.MapControllerRoute("entry", "/", new { controller = controller.Name, action = method.Name });
-                    }
+                        endpoints.MapControllerRoute("entry", "/", new { controller = "RestGenericController", action = "HandleRequest" });
+                        }
                     else if(HasAttrib(typeof(RestServiceMethodAttribute), method))
                     {
-                        endpoints.MapControllerRoute(name, $"{controller.Name}/{method.Name}", new { controller = controller.Name, action = method.Name });
+                        endpoints.MapControllerRoute(name, $"{controller.Name}/{method.Name}", new { controller = "RestGenericController", action = "HandleRequest" });
                     }
                 }
             }
