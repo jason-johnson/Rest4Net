@@ -24,14 +24,14 @@ namespace Rest4NetCore.Controller
             contractMap[contract] = contractInfo.ModelClass;
         }
 
-        internal void AddEntryPoint(Type type, MethodInfo method)
+        internal void AddEntryPoint(Type controller, MethodInfo method)
         {
 
         }
 
-        internal string AddServiceMethod(Type type, MethodInfo method)
+        internal string AddServiceMethod(Type controller, MethodInfo method)
         {
-            throw new NotImplementedException();
+            return $"{controller.Name}/{method.Name}";
         }
 
         internal async Task<IActionResult> HandleRequest(HttpContext context)
