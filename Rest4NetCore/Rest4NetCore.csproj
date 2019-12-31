@@ -12,6 +12,6 @@
     <Folder Include="Attributes\" />
     <Folder Include="Utilities\" />
     <Folder Include="Mvc\" />
-    <Folder Include="Controller\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 </Project>
