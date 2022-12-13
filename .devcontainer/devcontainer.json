@@ -1,10 +1,11 @@
 {
-    "name": "rest4net.dev",
+    "name": " Rest4Net.dev",
+	"image": "mcr.microsoft.com/dotnet/sdk:7.0",
     "extensions": [
         "eamodio.gitlens",
         "davidanson.vscode-markdownlint",
         "ms-azuretools.vscode-docker",
         "ms-dotnettools.csharp"
     ],
-    "postCreateCommand": "/bin/bash ./.devcontainer/post-install.sh"
+    "postCreateCommand": "dotnet restore"
 }
