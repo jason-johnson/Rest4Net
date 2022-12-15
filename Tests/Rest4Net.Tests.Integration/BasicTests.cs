@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Rest4Net.Tests.Integration
 {
-    public class BasicTests : IClassFixture<CustomWebApplicationFactory<WebApi.Startup>>
+    public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
     {
-        private readonly WebApplicationFactory<WebApi.Startup> _factory;
+        private readonly WebApplicationFactory<Program> _factory;
 
-        public BasicTests(CustomWebApplicationFactory<WebApi.Startup> factory)
+        public BasicTests(WebApplicationFactory<Program> factory)
         {
             _factory = factory;
         }

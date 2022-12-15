@@ -27,3 +27,5 @@ app.MapControllers();
 app.UseRest();
 
 app.Run();
+
+public partial class Program { }
