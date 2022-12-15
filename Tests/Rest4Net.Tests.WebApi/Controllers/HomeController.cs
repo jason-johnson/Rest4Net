@@ -21,12 +21,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
         [RestEntrypoint]
         public Home GetInitialResource()
         {
-            var result = new Home
-            {
-                Greeting = "Hello and welcome to the coffee shop!",
-                Coffees = coffeeRepository.GetAll(c => c.Count > 0).Select(c => c.Name),
-                Pastries = pastryRepository.GetAll(p => p.Count > 0)
-            };
+            var result = new Home("Hello and welcome to the coffee shop!", coffeeRepository.GetAll(c => c.Count > 0).Select(c => c.Name), pastryRepository.GetAll(p => p.Count > 0));
 
             return result;
         }
@@ -34,10 +29,7 @@ namespace Rest4Net.Tests.WebApi.Controllers
         [RestServiceMethod]
         public OrderResultContract PlaceOrder(OrderContract order)      // TODO: If the return type and/or parameter are already contracts nothing more is needed
         {
-            var result = new OrderResultContract
-            {
-                Order = new OrderContract()
-            };
+            var result = new OrderResultContract(new OrderContract());
 
             foreach (var entry in order.Coffees)
             {
