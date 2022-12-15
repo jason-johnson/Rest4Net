@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Rest4Net.Tests.Common.Model;
+﻿using Rest4Net.Tests.Common.Model;
 using Rest4Net.Tests.Common.Repository;
 using Rest4Net.Tests.WebApi.Contracts;
 using Rest4Net.Tests.WebApi.Model;

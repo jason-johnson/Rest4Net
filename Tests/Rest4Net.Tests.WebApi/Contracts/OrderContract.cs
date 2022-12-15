@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Rest4NetCore.Attributes;
+﻿using Rest4NetCore.Attributes;
 
 namespace Rest4Net.Tests.WebApi.Contracts
 {
