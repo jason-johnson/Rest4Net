@@ -28,7 +28,7 @@ namespace Rest4Net.Tests.Integration
             }
 
             Assert.Equal("application/json; charset=utf-8",
-                response.Content.Headers.ContentType.ToString());
+                response?.Content?.Headers?.ContentType?.ToString());
         }
     }
 }
