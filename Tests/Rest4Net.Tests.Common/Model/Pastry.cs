@@ -1,4 +1,4 @@
-﻿namespace Rest4Net.Test.Common.Model
+﻿namespace Rest4Net.Tests.Common.Model
 {
     public class Pastry
     {

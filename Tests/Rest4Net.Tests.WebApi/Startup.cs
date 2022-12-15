@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Rest4Net.Test.Common.Repository;
+using Rest4Net.Tests.Common.Repository;
 using Rest4NetCore.Mvc;
 
 namespace Rest4Net.Tests.WebApi

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Rest4Net.Test.Common.Repository
+namespace Rest4Net.Tests.Common.Repository
 {
     public class TestRepository<T> : IRepository<T>
     {

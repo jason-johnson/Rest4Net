@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Rest4Net.Test.Common.Model;
+using Rest4Net.Tests.Common.Model;
 
 namespace Rest4Net.Tests.WebApi.Model
 {
