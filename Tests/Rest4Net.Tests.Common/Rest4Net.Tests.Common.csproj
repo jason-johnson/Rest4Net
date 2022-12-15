@@ -1,19 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Rest4Net.Tests.WebApi\appsettings.Development.json" />
-    <None Remove="Rest4Net.Tests.WebApi\appsettings.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Rest4Net.Tests.Integration\CoffeeServiceTests.cs" />
-    <Compile Remove="Controller\CoffeShop.cs" />
-    <Compile Remove="Contracts\CoffeeContract.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Rest4NetCore\Rest4NetCore.csproj" />
-  </ItemGroup>
 </Project>
