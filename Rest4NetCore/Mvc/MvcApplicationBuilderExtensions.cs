@@ -7,8 +7,6 @@ namespace Rest4NetCore.Mvc
 {
     public static class MvcApplicationBuilderExtensions
     {
-        private const string ENTRY_POINT_ASSEMBLY = "ENTRY_POINT_ASSEMBLY";
-
         public static IApplicationBuilder UseRest(this IApplicationBuilder app, RestOptions options)
         {
             if (app == null)
@@ -20,7 +18,7 @@ namespace Rest4NetCore.Mvc
                 throw new ArgumentNullException(nameof(options));
             }
 
-            SetAssembly(options, app);
+            options.Assembly = Assembly.GetCallingAssembly();
 
             return app.UseMiddleware<RestMiddleware>(Options.Create(options));
         }
@@ -34,14 +32,9 @@ namespace Rest4NetCore.Mvc
 
             var options = new RestOptions();
 
-            SetAssembly(options, app);
+            options.Assembly = Assembly.GetCallingAssembly();
 
             return app.UseMiddleware<RestMiddleware>(Options.Create(options));
-        }
-
-        private static void SetAssembly(RestOptions restOptions, IApplicationBuilder app)
-        {
-            restOptions.Assembly = app.Properties.ContainsKey(ENTRY_POINT_ASSEMBLY) ? app.Properties[ENTRY_POINT_ASSEMBLY] as Assembly : Assembly.GetEntryAssembly();
         }
     }
 }
